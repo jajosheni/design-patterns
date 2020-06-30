@@ -1,0 +1,5 @@
+**Object Pool Design Pattern**
+
+Creating classes in our projects can sometimes be costly. In case of unnecessary allocation from memory, performance problems may arise. To solve such performance problems, it may be a solution to prevent classes from being rebuilt. The Object Pool Design Pattern is used for this.
+
+In our project, Article objects are produced and added to the pool list. The object is called from the list for later use. If it does not exist, it is prevented from re-creating the object.

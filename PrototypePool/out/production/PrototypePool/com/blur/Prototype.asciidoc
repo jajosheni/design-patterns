@@ -1,0 +1,5 @@
+**Prototype Design Pattern**
+
+This design pattern is used to create a new object from an existing object by copying.
+
+In our project, there is a Prototype class that can be copied. This class includes Log lists and number variables. A copy of the client class and the log lists were created with Shallow Copy and Deep Copy.
