@@ -1,0 +1,53 @@
+== Singleton
+.User.java
+[source,java]
+
+package com.blur;
+public class User {
+    public String username;
+    public String email;
+    public String password;
+    public String nickname;
+    public String gender;
+    public int id;
+
+A class named User that includes the necessary variables.
+
+[source,java]
+   private static User instance = null;
+   
+To make sure that this object hasn't been created before we make it static.
+
+[source,java]
+   private User(){}
+   
+construct() method.
+
+[source,java]
+   public static User getInstance(){
+        if(instance == null)
+        {
+            instance  = new User();
+        }
+      return instance;
+   }
+
+Singleton template. In this Singleton approach, our object is created when we want, and by checking whether the same object is formed or not, we ensure that the object is created or not, so we avoid the creation of the same object a second time.
+
+[source,java]
+  public void viewProfile(){
+        System.out.println("Profile Viewed " + this.id);
+    }
+
+A simple function inside our class.
+
+[source,java]
+    com.blur.User object = com.blur.User.getInstance();
+    object.id = 123;
+    com.blur.User object2 = com.blur.User.getInstance();
+    com.blur.User object3 = com.blur.User.getInstance();
+    object.viewProfile();
+    object2.viewProfile();
+    object3.viewProfile();
+
+The id of all three objects will be the same as they point to the same object.

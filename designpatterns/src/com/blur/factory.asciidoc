@@ -1,0 +1,71 @@
+== Factory Pattern
+
+.ArticleCategory.java
+[source,java]
+ public interface ArticleCategory {
+   void showArticles();
+ }
+
+An interface called ArticleCategory with a common method showArticles().
+
+[source,java]
+class Politics implements ArticleCategory {
+    @Override
+    public void showArticles() {
+        System.out.println("Politics articles");
+    }
+}
+class Sport implements ArticleCategory {
+    @Override
+    public void showArticles() {
+        System.out.println("Sport articles");
+    }
+}
+class Travel implements ArticleCategory {
+    @Override
+    public void showArticles() {
+        System.out.println("Travel Articles");
+    }
+}
+class Science implements ArticleCategory {
+    @Override
+    public void showArticles() {
+        System.out.println("Science articles");
+    }
+}
+class Literature implements ArticleCategory {
+    @Override
+    public void showArticles() {
+        System.out.println("Literature articles");
+    }
+}
+
+There are many Article Categories that inherit the showArticles() method from ArticleCategory interface.
+
+[source,java]
+
+class Main {
+    public static void main(String[] args) {
+        try {
+            Politics politics = (Politics) ArticleFactory.createEntry(Politics.class);
+            politics.showArticles();
+            Science science = (Science) ArticleFactory.createEntry(Science.class);
+            science.showArticles();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Some objects created and their common method is ran.
+
+.ArticleFactory.java
+[source,java]
+package com.blur;
+public class ArticleFactory {
+    public static ArticleCategory createEntry(Class aClass) throws IllegalAccessException, InstantiationException {
+        return (ArticleCategory) aClass.newInstance();
+    }
+}
+
+The ArticleFactory class has one static method, while this procedure creates other classes, instead of creating it over and over again, it creates it in a more optimized way.
