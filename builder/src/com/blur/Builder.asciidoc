@@ -1,0 +1,9 @@
+**Builder Design Pattern**
+
+With this design pattern, we can create an object step by step with its different features.
+
+The object to be created in this project is the User object.
+The constructor of the user class is the class named UserBuilder.
+The User constructor enables the step-by-step installation of the object and gains
+new data with the methods of "name", "email", "celNo", "nickname", "gender".
+
