@@ -1,0 +1,5 @@
+**Iterator Design Pattern**
+
+In this project, the methods that obtain the elements in the article category are defined with the Iterator interface.
+
+In the Container interface we define methods that the Iterator class will use to produce the Iterator object. The ArticleCategories class is the class that contains the elements in the article category and it  provides the Iterator type that will loop through the article categories by applying the Container interface.

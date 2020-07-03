@@ -1,0 +1,17 @@
+**Observer Design Pattern**
+
+In this project, the observer prints an alert when an article or comment is added.
+
+The Comment and Article classes are derived from the Observer interface class.
+When the notify method in these classes is called, the notify method works in the comments and article classes.
+
+The observable class in the Observer design pattern determines what is observed.
+The class observed in this project is named NotifyObservable.
+In this class a list containing observers is saved.
+
+There is an addObserver method that can add to this list,
+a removeObserver to delete from the list and
+a notifyObservable method to announce to the observers.
+
+This method calls the notifyObservable method of all observers in the list,
+allowing them to be aware of the change and take action accordingly.
