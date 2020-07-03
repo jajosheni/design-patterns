@@ -1,0 +1,19 @@
+**Memento Design Pattern**
+
+The subject of the Memento design pattern example implements the "undo" method of a program that writes the article.
+This program keeps the article contents in a class called Article.
+
+ArticleMemento class stores the contents of the Article class for further use.
+This class is our memento class in the design pattern.
+
+ArticleCreator class holds the list of ArticleMemento objects containing articles.
+
+Whenever a new article item content comes to this class,
+one memento object is linked to the content created and this object is added to the list of memento objects.
+
+The undo procedure in this class pulls the memento object that holds the latest article content in the list
+and sets the article content as the content inside this memento object.
+
+If we run the member class we add the contents of "Politics", "Literature", "Science" and "Sports".
+Then after the undo function is run three times the content of the article becomes "Politics".
+
